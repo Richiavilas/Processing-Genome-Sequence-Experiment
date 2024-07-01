@@ -1,0 +1,61 @@
+Un zip file with code 
+
+gzip -d "S163TA_CKDN220037645-1A_H3GJ5DSX5_L1_1 (1).fq.gz"
+
+Code to Fix fasq files 
+
+seqtk seq -A input.fastq > output.fasta
+
+seqtk seq -F CHAR output.fasta > reorganized.fastq
+
+Analayze files with fast Qc
+
+fastqc yourfile_R1.fastq.gz yourfile_R2.fastq.gz
+
+fastqc yourfile.fastq.gz
+
+Aligning sequences 
+
+mixcr align --preset milab-human-dna-tcr-multiplex -s hsa -OallowPartialAlignments=true \
+    output123456_file.vdjca
+
+
+
+
+mixcr align --preset milab-human-dna-tcr-multiplex -s hsa -r align_report.txt \ read1.fastq.gz read2.fastq.gz output.vdjca
+
+mixcr align --preset milab-human-dna-tcr-multiplex -s hsa -r align_report.txt -f \ outputS251TA.vdjca
+
+Look for code with mixcr with two strands for t cells
+
+
+Then 
+Assemble partial allinements 
+mixcr assemble -r assemble_report.txt -OseparateByV=false output.vdjca output.clna
+
+Then 
+Annotate clones
+
+
+Code to run on mixcr after fixing fastq files
+
+mixcr align --preset milab-human-dna-tcr-multiplex /Users/ricardoavila/Documents/Toby\ Lab/Toby\ Lab\ S163TA/S163TAaa\ Split\ 1mb/xaa.fastq  output.vdjca
+
+Started analysis of S163TA_CKDN220037645-1A_H3GJ5DSX5_L1_2.fastq Approx 5% complete for S163TA_CKDN220037645-1A_H3GJ5DSX5_L1_2.fastq Failed to process file S163TA_CKDN220037645-1A_H3GJ5DSX5_L1_2.fastq uk.ac.babraham.FastQC.Sequence.SequenceFormatException: ID line didn't start with '@' at line 11915349 	at uk.ac.babraham.FastQC.Sequence.FastQFile.readNext(FastQFile.java:163) 	at uk.ac.babraham.FastQC.Sequence.FastQFile.next(FastQFile.java:129) 	at uk.ac.babraham.FastQC.Analysis.AnalysisRunner.run(AnalysisRunner.java:77) 	at java.base/java.lang.Thread.run(Thread.java:1570)
+
+Editing a specific set of lines 
+
+head -n 11915356 original.fastq | tail -n 10 > fast1.tmp 
+# Display the lines to confirm (optional) cat fast1.tmp 
+# Edit the lines using your preferred text editor nano fast1.tmp
+
+head -n 11915346 original.fastq > original_head.tmp cat fast1.tmp >> original_head.tmp tail -n +11915357 original.fastq >> original_head.tmp
+
+
+mixcr align --preset milab-human-dna-tcr-multiplex -s hsa -r align_report.txt -f \
+  /Users/ricardoavila/Documents/Toby\ Lab/Toby\ Lab\ S163TA\ output_R1_trimmed.fastq \
+  /Users/ricardoavila/Documents/Toby\ Lab/Toby\ Lab\ S163TA\ output_R2_trimmed.fastq 
+ \
+    /Users/ricardoavila/Documents/Toby\ Lab/Toby\ Lab\ S163TA \ output12443.vdjca
+
+
