@@ -62,4 +62,12 @@ mixcr align --preset milab-human-dna-tcr-multiplex -s hsa -r align_report.txt -f
 Overview analysis of fasta files on mixcr 
 mixcr analyze exome-seq \ --species hsa \/Users/ricardoavila/Documents/Toby\ Lab/Genome\ Sequences/Raw\ Files/S158TA_TCRB.fasta  /Users/ricardoavila/Documents/Toby\ Lab/Genome\ Sequences/Raw\ Files/Fasta\ OG\ 158resultpiriment
 
+Used on the New Fasta raw files
+mixcr exportAlignmentsPretty -s 1000 -n 10 /Users/ricardoavila/Documents/Toby\ Lab/Genome\ Sequences/Raw\ Files/S158/Fasta\ OG\ 158result.passembled.2.vdjca
+
+Used on the Novogenes files
+mixcr exportAlignmentsPretty -s 1000 -n 10 /Users/ricardoavila/Documents/Toby\ Lab/Toby\ Lab\ S163TA/Toby\ Lab\ S163TAresult.passembled.2.vdjca
+ Gave an outline of the nucleotide
+mixcr exportAlignmentsPretty /Users/ricardoavila/Documents/Toby\ Lab/Genome\ Sequences/Raw\ Files/S158/Fasta\ OG\ 158result.passembled.2.vdjca  /Users/ricardoavila/Documents/Toby\ Lab/Genome\ Sequences/Raw\ Files/S158\ 158output.txt
+
 
