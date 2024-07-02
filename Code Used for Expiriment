@@ -59,3 +59,7 @@ mixcr align --preset milab-human-dna-tcr-multiplex -s hsa -r align_report.txt -f
     /Users/ricardoavila/Documents/Toby\ Lab/Toby\ Lab\ S163TA \ output12443.vdjca
 
 
+Overview analysis of fasta files on mixcr 
+mixcr analyze exome-seq \ --species hsa \/Users/ricardoavila/Documents/Toby\ Lab/Genome\ Sequences/Raw\ Files/S158TA_TCRB.fasta  /Users/ricardoavila/Documents/Toby\ Lab/Genome\ Sequences/Raw\ Files/Fasta\ OG\ 158resultpiriment
+
+
